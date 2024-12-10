@@ -20,8 +20,8 @@ public class ExchangeRateController {
     }
 
     @GetMapping("/pairExchangeRates/{currency1}/{currency2}")
-    public PairRatesResponseDto getPairExchangeRates(@PathVariable("currency1")String currency1,
-                                                     @PathVariable("currency2")String currency2){
-        return exchangeRateService.getPairExchangeRates(currency1,currency2);
+    public PairRatesResponseDto getPairExchangeRates(@PathVariable("currency1") String currency1,
+                                                     @PathVariable("currency2") String currency2) {
+        return exchangeRateService.getPairExchangeRates(currency1, currency2);
     }
 }

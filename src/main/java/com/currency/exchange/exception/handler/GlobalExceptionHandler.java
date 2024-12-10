@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MalformedRequestException.class)
     public ResponseEntity<ErrorDto> handleMalformedRequestException(MalformedRequestException malformedRequestException) {
         ErrorDto errorDto = new ErrorDto("error", "malformed-request");
-        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(QuotaReachedException.class)
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnsupportedCurrencyCodeException.class)
     public ResponseEntity<ErrorDto> handleUnsupportedCurrencyCodeException(UnsupportedCurrencyCodeException unsupportedCurrencyCodeException) {
         ErrorDto errorDto = new ErrorDto("error", "unsupported-code");
-        return new ResponseEntity<>(errorDto, HttpStatus.UNPROCESSABLE_ENTITY);
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
