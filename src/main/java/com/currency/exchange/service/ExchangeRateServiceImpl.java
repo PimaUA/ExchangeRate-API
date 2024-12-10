@@ -1,8 +1,8 @@
 package com.currency.exchange.service;
 
 import com.currency.exchange.client.ExchangeRateApiClient;
-import com.currency.exchange.dto.AllRatesResponseDTO;
-import com.currency.exchange.dto.PairRatesResposnseDTO;
+import com.currency.exchange.dto.exchangeRates.AllRatesResponseDto;
+import com.currency.exchange.dto.exchangeRates.PairRatesResponseDto;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,12 +14,12 @@ public class ExchangeRateServiceImpl implements ExchangeRateService{
     }
 
     @Override
-    public AllRatesResponseDTO getExchangeRates(String currencyType){
+    public AllRatesResponseDto getExchangeRates(String currencyType){
         return exchangeRateApiClient.getExchangeRates(currencyType);
     }
 
     @Override
-    public PairRatesResposnseDTO getPairExchangeRates(String currency1, String currency2) {
+    public PairRatesResponseDto getPairExchangeRates(String currency1, String currency2) {
         return exchangeRateApiClient.getPairExchangeRates(currency1,currency2);
     }
 }

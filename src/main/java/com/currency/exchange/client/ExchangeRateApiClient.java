@@ -1,8 +1,8 @@
 package com.currency.exchange.client;
 
 import com.currency.exchange.config.FeignConfigClient;
-import com.currency.exchange.dto.AllRatesResponseDTO;
-import com.currency.exchange.dto.PairRatesResposnseDTO;
+import com.currency.exchange.dto.exchangeRates.AllRatesResponseDto;
+import com.currency.exchange.dto.exchangeRates.PairRatesResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ExchangeRateApiClient {
 
     @GetMapping("/latest/{currencyType}")
-    AllRatesResponseDTO getExchangeRates(
+    AllRatesResponseDto getExchangeRates(
             @PathVariable("currencyType") String currencyType);
 
     @GetMapping("/pair/{currency1}/{currency2}")
-    PairRatesResposnseDTO getPairExchangeRates(@PathVariable("currency1") String currencyType1,
-                                               @PathVariable("currency2") String currencyType2);
+    PairRatesResponseDto getPairExchangeRates(@PathVariable("currency1") String currencyType1,
+                                              @PathVariable("currency2") String currencyType2);
 }
 
