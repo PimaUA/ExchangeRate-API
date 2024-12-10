@@ -1,17 +1,21 @@
 package com.currency.exchange.dto.exchangeRates;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Map;
 
+@Getter
+@Setter
 public class AllRatesResponseDto {
     public String result;
     @JsonProperty("time_last_update_utc")
-    public String timeLastUpdateUtc;
+    private String timeLastUpdateUtc;
     @JsonProperty("time_next_update_utc")
-    public String timeNextUpdateUtc;
+    private String timeNextUpdateUtc;
     @JsonProperty("base_code")
-    public String baseCode;
+    private String baseCode;
     @JsonProperty("conversion_rates")
-    public Map<String, Double> conversionRates;
+    private Map<String, Double> conversionRates;
 }

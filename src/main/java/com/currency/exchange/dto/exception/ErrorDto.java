@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ErrorDto {
-    public String result;
+    private String result;
     @JsonProperty("error-type")
-    public String errorType;
+    private String errorType;
 }
