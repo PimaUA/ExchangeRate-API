@@ -1,8 +1,8 @@
 package com.currency.exchange.exception.customexceptions;
 
-public class UnsupportedCurrencyCodeException extends RuntimeException{
+public class UnsupportedCurrencyCodeException extends RuntimeException {
 
-    public UnsupportedCurrencyCodeException(String message){
+    public UnsupportedCurrencyCodeException(String message) {
         super(message);
     }
 }

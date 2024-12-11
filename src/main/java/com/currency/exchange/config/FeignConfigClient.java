@@ -24,7 +24,7 @@ public class FeignConfigClient {
     }
 
     @Bean
-    ErrorDecoder feignErrorDecoder() {
+    public ErrorDecoder feignErrorDecoder() {
         return new ExchangeRateApiDecoder();
     }
 }
